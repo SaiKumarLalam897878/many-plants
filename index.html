@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>mAny Plants Shopping Website</title>
+    <link rel="stylesheet" href="My Many Plants Project.css">
+    <link rel="icon" href="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672071092/Nursery_Logo_hiyfhx.png">
+    <script src="https://kit.fontawesome.com/506b172c7c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- loader -->
+    <div class="load" id="loader">
+        <p class="beta-information">Hello.! Developing in Progress <br>your seeing an incomplete website</p>
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--home section-->
+
+    <!-- top-account and cart section for small to medium devices -->
+    <div id="homePage" class="d-none">
+        <div class="d-flex flex-row d-lg-none">
+            <button class="account-button w-50 text-center" onclick="display('sectionAccount')" id="accountButton"><i class="fa-solid fa-user mr-2"></i>Account</button>
+            <button class="cart-button w-50" onclick="display('sectionCartPage')" id="cartButton"><i class="fa-solid fa-cart-shopping mr-2 "></i>Cart<span class="pl-3" id="smallDevicesCart"></span></button>
+        </div>
+        <!--navbar section with weebsite logo and search bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top" style="padding:0px 5px;">
+            <div class="d-flex flex-row">
+                <a class="navbar-brand" onclick="display('sectionHome')">
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672071092/Nursery_Logo_hiyfhx.png" class="web_logo" />
+                </a>
+                <h1 class="logo_text d-none d-sm-block">mAny Plants</h1>
+            </div>
+
+            <form class="search-div">
+                <input type="search" list='whatToDo' id="searchBar" class="search-bar" placeholder="Search for Plants">
+                <datalist id='whatToDo'>
+                    <option value="Indoor Plants">
+                    <option value="Outdoor Plants">
+                    <option value="Bonsai Plants">
+                </datalist>
+                <button class="search-button" for="searchBar" type="submit" disabled><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
+            <a class="navbar-toggler" style="border-width:0px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active nav_items d-none d-lg-block ml-3" style="width:75px; cursor:pointer;" onclick="display('sectionCartPage')"><i class="fa-solid fa-cart-shopping"><span class="cart-items" id="cartItems"> Cart</span></i></a>
+                    <a class="nav-link active nav_items" href="#" onclick="display('sectionHome')">Home</a>
+                    <div class="dropdown">
+                        <a class="category-inline-font nav-link dropdown-toggle nav-item dropdown nav_items" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Personal
+                        </a>
+                        <div class="dropdown-menu" style="background-color:#c1f5cf;">
+                            <a class="dropdown-item" href="#" onclick="display('sectionAccount')"><i class="fa-solid fa-user mr-3"></i>My Account</a>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-basket-shopping mr-3"></i>My Orders</a>
+                            <a class="dropdown-item" href="#contactussection"><i class="fa-solid fa-phone mr-3"></i>Contact Us</a>
+                            <a class="dropdown-item" href="#aboutUs"><i class="fa-solid fa-users mr-3"></i>About Us</a>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-lock mr-3"></i>Privacy Policy</a>
+                            <a class="dropdown-item" href="#"><i class="fa-solid fa-book mr-3"></i>Terms and Conditions</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="category-inline-font nav-link dropdown-toggle nav-item dropdown nav_items" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <div class="dropdown-menu category-inline-font" style="background-color:#c1f5cf;">
+                            <h1 class="category-inline-heading">POT</h1>
+                            <hr />
+                            <a class="dropdown-item" href="#">Indoor Plants</a>
+                            <a class="dropdown-item" href="#">Outdoor Plants</a>
+                            <hr />
+                            <h1 class="category-inline-heading">PLANTS</h1>
+                            <hr />
+                            <a class="dropdown-item" href="#">Flowering Plants</a>
+                            <a class="dropdown-item" href="#">Climbers & Creepers</a>
+                            <a class="dropdown-item" href="#">Cactus Plants</a>
+                            <a class="dropdown-item" href="#">Lucky Plants</a>
+                        </div>
+                    </div>
+                    <a class="nav-link active nav_items" href="#">Settings</a>
+                </div>
+            </div>
+        </nav>
+        <div id="sectionHome">
+            <!--carousel section with 4 images and shop now option-->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="border-radius:50%; width:8px; height:8px; background-color: #32a852;"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1" style="border-radius:50%; width:8px; height:8px; background-color: #32a852;"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2" style="border-radius:50%; width:8px; height:8px; background-color: #32a852;"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3" style="border-radius:50%; width:8px; height:8px; background-color: #32a852;"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4" style="border-radius:50%; width:8px; height:8px; background-color: #32a852;"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672297208/Bonsai_plants_ctbgac.png" class="w-100" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1674746914/New_Project_rn2mvz.png" class="w-100" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672297210/Cactus_plants_q4mzng.png" class="w-100" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672297208/person_plant_tuyjs6.png" class="w-100" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672297209/flowering_plants_ikwxb2.png" class="w-100" />
+                    </div>
+                </div>
+            </div>
+
+            <!--popular products section-->
+            <h1 class="gallery-heading">Popular Products</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex flex-row col-6 col-lg-3">
+                        <div class="text-center popular-plants-card" onclick="display('sectionParadise')">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132157/Screenshot_20221227_023403_ehpvva.png" class="popular-plants-image" />
+                            <h1 class="popular-plant-text">Paradise white plant</h1>
+                            <span class="deal-price-details"><span class="price-details">Rs.600</span> Rs 349</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row col-6 col-lg-3">
+                        <div class="text-center popular-plants-card" onclick="display('sectionAgave')">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132157/Screenshot_20221227_023342_xutp7i.png" class="popular-plants-image" />
+                            <h1 class="popular-plant-text">Agave Plant</h1>
+                            <span class="deal-price-details"><span class="price-details">Rs.750</span> Rs 399</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row col-6 col-lg-3">
+                        <div class="text-center popular-plants-card" onclick="display('sectionDottie')">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132157/Screenshot_20221227_023719_bvablg.png" class="popular-plants-image" />
+                            <h1 class="popular-plant-text">Dottie Natural Plant</h1>
+                            <span class="deal-price-details"><span class="price-details">Rs.500</span> Rs 199</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row col-6 col-lg-3">
+                        <div class="text-center popular-plants-card" onclick="display('sectionBirdsNest')">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132158/Screenshot_20221227_023311_yltgtx.png" class="popular-plants-image" />
+                            <h1 class="popular-plant-text">Bird's Nest Fern</h1>
+                            <span class="deal-price-details"><span class="price-details">Rs.500</span> Rs 299</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--category section-->
+            <!-- <h1 class="gallery-heading">Categories</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div>
+                        <img calss="" src="" />
+                        <span class="popular-plant-text"></span>
+                    </div>
+                    <div>
+                        <img calss="" src="" />
+                        <span class="popular-plant-text"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div>
+                        <img calss="" src="" />
+                        <span class="popular-plant-text"></span>
+                    </div>
+                    <div>
+                        <img calss="" src="" />
+                        <span class="popular-plant-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+            <!--gallery section-->
+            <h1 class="gallery-heading">Gallery</h1>
+            <div class="container">
+                <div class="row galleryImg">
+                    <div class="col-12 col-lg-6">
+                        <div class="mb-3">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132159/Screenshot_20221227_023649_trqkac.png" class="w-100 gallery-images" />
+                        </div>
+                        <div class="mb-3">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132158/Screenshot_20221227_023531_qdbji2.png" class="w-100 gallery-images" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="mb-3">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672070142/sample.jpg" class="w-100 gallery-images" />
+                        </div>
+                        <div class="mb-3">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672135832/pexels-nataliya-vaitkevich-4813828_cytp5r.jpg" class="w-100 gallery-images" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--our products section-->
+            <h1 class="gallery-heading">More Plants</h1>
+            <div class="container">
+                <div class="d-flex flex-row mt-3 scroll-bar" id="morePlantsSection">
+                    <!-- 
+                <div>
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672125977/pexels-elle-hughes-1058963_ix5ibz.jpg" class="scroll-images" />
+                    <button class="btn btn-outline-success cart-now-button">Add to Cart</button>
+                </div>
+                <div>
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672125933/pexels-scott-webb-82037267_cyssxh.jpg" class="scroll-images" />
+                    <button class="btn btn-outline-success cart-now-button">Add to Cart</button>
+                </div>
+                <div>
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672138448/Screenshot_20221227_042234_cnbd5m.png" class="scroll-images" />
+                    <button class="btn btn-outline-success cart-now-button">Add to Cart</button>
+                </div>
+                <div>
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672138448/Screenshot_20221227_042217_xvi9gm.png" class="scroll-images" />
+                    <button class="btn btn-outline-success cart-now-button">Add to Cart</button>
+                </div>
+                <div>
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672138448/Screenshot_20221227_042155_fqpqdi.png" class="scroll-images" />
+                    <button class="btn btn-outline-success cart-now-button">Add to Cart</button>
+                </div>
+                <div>
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672138448/Screenshot_20221227_042135_bcqzjn.png" class="scroll-images" />
+                    <button class="btn btn-outline-success cart-now-button">Add toCart</button>
+                </div>
+                <div>
+                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672138448/Screenshot_20221227_042226_lhps9e.png" class="scroll-images" />
+                    <button class="btn btn-outline-success cart-now-button">Add to Cart</button>
+                </div> -->
+                </div>
+            </div>
+
+            <!--about-us section-->
+            <div id="aboutUs">
+                <div class="container">
+                    <div class="container about-us-bg">
+                        <h1 class="gallery-heading">About Us</h1>
+                        <p class="about-us-paragraph">What We mAny Plants Nursery, situated at Visakhapatnam, Andhra Pradesh, aim to promote environmental sustainability
+                            and make our cocuntry pollution-free and encourage our coustomers to purchase more plants to be one with natur.
+                            We aim at bulding an excenllent reputation and growing our business by selling beatiful plants that you can
+                            decorate your home or veranda with. Greenery is the best form of decoration and we thus have plenty of scented
+                            and wonderful plants to choose from.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--testimonials-->
+            <div class="container">
+                <div class="testimonials-bg">
+                    <h1 class="gallery-heading">Testimonials</h1>
+                    <div id="testimonialControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="text-center">
+                                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1674625973/IMG_20211227_130200_702_osmzaa.jpg" alt="person image" class="testimonials-image" />
+                                    <hr />
+                                    <p class="about-us-paragraph">Wonderfull User Interface and More types of Plants I really liked it</p>
+                                    <h1 class="about-us-paragraph text-right pr-3">- Sai Kumar Lalam</h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="text-center">
+                                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1674629183/1658252314703_wbvqso.jpg" alt="person image" class="testimonials-image" />
+                                    <hr />
+                                    <p class="about-us-paragraph">Wonderfull User Interface and More types of Plants I really liked it</p>
+                                    <h1 class="about-us-paragraph text-right pr-3">- Ajay</h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="text-center">
+                                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1674629183/1672844364302_kt2gd6.jpg" alt="person image" class="testimonials-image" />
+                                    <hr />
+                                    <p class="about-us-paragraph">Wonderfull User Interface and More types of Plants I really liked it</p>
+                                    <h1 class="about-us-paragraph text-right pr-3">- Tejomoye</h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="text-center">
+                                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1674629919/WhatsApp_Image_2023-01-25_at_12.28.16_du1yqg.jpg" alt="person image" class="testimonials-image" />
+                                    <hr />
+                                    <p class="about-us-paragraph">Wonderfull User Interface and More types of Plants I really liked it</p>
+                                    <h1 class="about-us-paragraph text-right pr-3">- Sai</h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="text-center">
+                                    <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1674629183/1665589116818_co8or4.jpg" alt="person image" class="testimonials-image" />
+                                    <hr />
+                                    <p class="about-us-paragraph">Wonderfull User Interface and More types of Plants I really liked it</p>
+                                    <h1 class="about-us-paragraph text-right pr-3">- Chiranjeevi</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <a data-target="#testimonialControls" data-slide="prev" type="button">
+                                <span aria-hidden="true"><i class="fa-solid fa-chevron-left testimonials-button" style="color:rgba(90, 92, 91,0.5);"></i></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a data-target="#testimonialControls" data-slide="next" type="button">
+                                <span aria-hidden="true"><i class="fa-solid fa-chevron-right testimonials-button" style="color:rgba(90, 92, 91,0.5);"></i></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--contact-us section-->
+            <div id="contactussection">
+                <h1 class="gallery-heading">Contact Us</h1>
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-6 col-lg-3 text-center mb-3">
+                            <i class="fa-solid fa-location-dot fa-lg"></i>
+                            <h1 class="contact-us-heading pt-2">Our Office Address</h1>
+                            <p class="contact-us-paragraph">55/201/300, Near Sriharipuram Ganesh Temple, Gajuwaka, Visakhapatnam, <br />Andhra Pradesh - 530011</p>
+                        </div>
+                        <div class="col-5 col-lg-3 text-center">
+                            <i class="fa-solid fa-envelope fa-lg"></i>
+                            <h1 class="contact-us-heading pt-2">General Enquiries</h1>
+                            <p class="contact-us-paragraph">manyplants@gmail.com</p>
+                        </div>
+                        <div class="col-6 col-lg-3 text-center">
+                            <i class="fa-solid fa-phone-volume fa-lg"></i>
+                            <h1 class="contact-us-heading pt-2">Contact Us</h1>
+                            <span class="contact-us-paragraph">+91 123456789</span>
+                        </div>
+                        <div class="col-5 col-lg-3 text-center">
+                            <i class="fa-solid fa-credit-card fa-lg"></i>
+                            <h1 class="contact-us-heading pt-2">Payment Method</h1>
+                            <p class="contact-us-paragraph">All Credit & Debit<br /> Pay on Delivery is Avilable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--home section end-->
+
+        <!--popular products card pages-->
+        <!--Paradise white plant card-->
+        <div>
+            <div id="sectionParadise">
+                <div calss="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 text-center">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132157/Screenshot_20221227_023403_ehpvva.png" />
+                        </div>
+                        <div class="col-12 col-lg-6 text-center mt-4">
+                            <span class="popular-plant-card-heading">Paradise White Plant</span>
+                            <span class="deal-price-details popular-plant-deal-price"><span class="price-details popular-plant-price">Rs.600</span>Rs 349</span>
+                            <p class="popular-plant-card-paragraph">A Paradise Plant, also known as the Bird of Paradise, is a tropical flowering plant native to South Africa.
+                                It features long, lush green foliage and brightly colored, bird-like blooms in shades of orange and blue, making
+                                it a popular ornamental plant in warm climates. The plant grows best in well-drained soil and sunny locations and
+                                can reach heights of up to 4-6 feet. The Paradise Plant is prized for its stunning appearance and is considered a
+                                symbol of beauty and exotic elegance.
+                            </p>
+                            <button class="btn btn-outline-success cart-now-button" onclick="addCartItems()">Add to Cart</button>
+                            <button class="btn btn-warning cart-now-button">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--agave plant card page-->
+            <div id="sectionAgave">
+                <div calss="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 text-center">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132157/Screenshot_20221227_023342_xutp7i.png" />
+                        </div>
+                        <div class="col-12 col-lg-6 text-center mt-4">
+                            <span class="popular-plant-card-heading">Agave Plant</span>
+                            <span class="deal-price-details popular-plant-deal-price"><span class="price-details popular-plant-price">Rs.750</span> Rs 399</span>
+                            <p class="popular-plant-card-paragraph">Agave is a genus of succulent plants native to the hot and arid regions of Mexico and the
+                                southwestern United States. It is a distinctive and popular ornamental plant, known for its spiky leaves and large inflorescences.
+                                Agave plants typically have thick, fleshy leaves that store water, allowing the plant to survive extended periods of drought. Some
+                                species of agave are used for the production of tequila, and the sap or "agave nectar" from some species is used as a sweetener. The
+                                leaves of some agave species also have medicinal uses. The size and appearance of agave plants can vary greatly, with some species
+                                reaching several feet in height, while others remain small and compact.
+                            </p>
+                            <button class="btn btn-outline-success cart-now-button" onclick="addCartItems()">Add to Cart</button>
+                            <button class="btn btn-warning cart-now-button">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--dottie natural plant card page-->
+            <div id="sectionDottie">
+                <div calss="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 text-center">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132157/Screenshot_20221227_023719_bvablg.png" />
+                        </div>
+                        <div class="col-12 col-lg-6 text-center mt-4">
+                            <span class="popular-plant-card-heading">Dottie Natural Plant</span>
+                            <span class="deal-price-details popular-plant-deal-price"><span class="price-details popular-plant-price">Rs.500</span> Rs 199</span>
+                            <p class="popular-plant-card-paragraph">Dottie Natural Plant is a versatile and low-maintenance plant that adds a touch of green to any
+                                space. With its delicate leaves and graceful growth habit, Dottie is a favorite among plant enthusiasts. It's easy to care for and can thrive
+                                in a range of lighting conditions, making it an ideal choice for those with busy lifestyles. Whether displayed in a sunny windowsill or used to
+                                brighten up a dark corner, Dottie is the perfect way to bring the beauty of nature indoors.
+                            </p>
+                            <button class="btn btn-outline-success cart-now-button" onclick="addCartItems()">Add to Cart</button>
+                            <button class="btn btn-warning cart-now-button">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Birds nest fern card page-->
+            <div id="sectionBirdsNest">
+                <div calss="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 text-center">
+                            <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672132158/Screenshot_20221227_023311_yltgtx.png" />
+                        </div>
+                        <div class="col-12 col-lg-6 text-center mt-4">
+                            <span class="popular-plant-card-heading">Bird's Nest Fern Plant</span>
+                            <span class="deal-price-details popular-plant-deal-price"><span class="price-details popular-plant-price">Rs.500</span> Rs 299</span>
+                            <p class="popular-plant-card-paragraph">The Birds Nest Fern (Asplenium nidus) is a tropical, evergreen plant that is known for its
+                                unique, rosette-like foliage. The plant gets its name from its shallow, nest-like rosettes that resemble bird nests. The leaves are bright
+                                green and leathery, with a slightly curled or crimped appearance. Birds Nest Ferns prefer low to medium light levels, high humidity,
+                                and moist soil. They are well-suited for terrariums or as indoor plants and can also be grown outdoors in warm, humid climates. These
+                                ferns are slow-growing but can reach a size of up to 2-3 feet in diameter when given the proper growing conditions.
+                            </p>
+                            <button class="btn btn-outline-success cart-now-button" onclick="addCartItems()">Add to Cart</button>
+                            <button class="btn btn-warning cart-now-button">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- account section -->
+        <div id="sectionAccount">
+            <div class="account-container">
+                <h1 class="form-heading">Account Details</h1>
+                <div class="user-image-div">
+                    <img id="userImage" class="user-image" src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1687753569/png-clipart-user-icon-foreigners-avatar-child-face_guuyl5.png" alt="user image">
+                    <!-- this bellow code is not in use -->
+                    <div class="d-none">
+                        <label class="upload-image" for="uploadId">Upload Image</label>
+                        <input class="d-none" id="uploadId" type="file" capture="user" accept="image/*">
+                        <p class="delete-image" id="deleteUserImage">Delete Image</p>
+                    </div>
+                    <!-- till this point -->
+
+                </div>
+                <form id="myForm" class="form-div">
+                    <div class="mb-3">
+                        <label for="name">User Name</label>
+                        <input type="text" placeholder="Enter Name" class="form-control" id="name" />
+                        <p id="nameErrMsg" class="error-message"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="text" placeholder="Enter Email" class="form-control" id="email" />
+                        <p id="emailErrMsg" class="error-message"></p>
+                    </div>
+                    <div class="mb-2">
+                        <label for="password">Password</label>
+                        <input type="password" placeholder="Enter Password" class="form-control" id="password" />
+                        <p id="passErrMsg" class="error-message"></p>
+                    </div>
+                    <button class="btn btn-primary">Sign In</button>
+                </form>
+                <!-- this bellow code is not in use -->
+                <p class="delete-image delete-account"></p>
+                <!-- till this point -->
+            </div>
+        </div>
+
+        <!--add to cart page-->
+        <div id="sectionCartPage">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 cart-scroll-bar" id="addToCartPage">
+                        <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1678511734/empty_cart_c19abo.png" id="cartEmptyImage" class="cart-empty" />
+                    </div>
+                    <div class="col-12 col-lg-4 shadow cart-price-container" id="totalPriceOfCart">
+                        <div class="d-flex flex-row justify-content-between" id="placeOrder"></div>
+                        <h1 class="price-details-heading">PRICE DETAILS</h1>
+                        <hr />
+                        <div class="d-flex flex-row justify-content-between cart-price-style">
+                            <span>Price(<span id="cartTotalItems">0 items</span>)</span>
+                            <span>₹<span id="cartPrice">0</span></span>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between cart-price-style">
+                            <span>Discount</span>
+                            <span>- ₹<span id="cartDiscountPrice">0</span></span>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between cart-price-style">
+                            <span>Delivery Charges</span>
+                            <span>Free</span>
+                        </div>
+                        <hr />
+                        <div class="d-flex flex-row justify-content-between total-price-style">
+                            <span>Total Amount</span>
+                            <span>₹<span id="cartTotalPrice">0</span></span>
+                        </div>
+                        <hr />
+                        <p class="cart-save-details d-none" id="savingPriceMessage">You will save ₹<span id="cartSavedPrice">0</span> on this order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer section with social media links-->
+        <div class="footer-section text-center mt-3">
+            <div class="d-flex flex-row justify-content-center mb-3">
+                <img src="https://res.cloudinary.com/dsr3a6xhk/image/upload/v1672071092/Nursery_Logo_hiyfhx.png" class="web_logo" />
+                <h1 class="footer-heading pt-2 pl-3">mAny Plants</h1>
+            </div>
+            <div class="d-flex flex-row justify-content-center">
+                <a href="#" target="">
+                    <div class="footer-logos">
+                        <i class="fa-brands fa-facebook fa-2x"></i>
+                    </div>
+                </a>
+                <a href="#" target="">
+                    <div class="footer-logos">
+                        <i class="fa-brands fa-twitter fa-2x"></i>
+                    </div>
+                </a>
+                <a href="#" target="">
+                    <div class="footer-logos">
+                        <i class="fa-brands fa-instagram fa-2x"></i>
+                    </div>
+                </a>
+                <a href="#" target="">
+                    <div class="footer-logos">
+                        <i class="fa-brands fa-youtube fa-2x"></i>
+                    </div>
+                </a>
+            </div>
+            <hr class="bg-dark" />
+            <span class="contact-us-paragraph">
+                <i class="fa-regular fa-copyright"></i> 2022 - 2023 copyrights reserved by sai kumar lalam.
+            </span>
+        </div>
+    </div>
+    <script src="My Many Plants Project.js"></script>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+
+</html>
