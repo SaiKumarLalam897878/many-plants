@@ -1,0 +1,656 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Raleway&display=swap&family=Righteous&display=swap&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 80%;
+}
+
+/* loader styles */
+.load {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a9ebbe90;
+    min-height: 100vh;
+}
+
+.beta-information {
+    text-align: center;
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+.loading {
+    --speed-of-animation: 0.9s;
+    --gap: 6px;
+    --first-color: #4c86f9;
+    --second-color: #49a84c;
+    --third-color: #f6bb02;
+    --fourth-color: #f6bb02;
+    --fifth-color: #2196f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    gap: 6px;
+    height: 100px;
+}
+
+.loading span {
+    width: 4px;
+    height: 50px;
+    background: var(--first-color);
+    animation: scale var(--speed-of-animation) ease-in-out infinite;
+}
+
+.loading span:nth-child(2) {
+    background: var(--second-color);
+    animation-delay: -0.8s;
+}
+
+.loading span:nth-child(3) {
+    background: var(--third-color);
+    animation-delay: -0.7s;
+}
+
+.loading span:nth-child(4) {
+    background: var(--fourth-color);
+    animation-delay: -0.6s;
+}
+
+.loading span:nth-child(5) {
+    background: var(--fifth-color);
+    animation-delay: -0.5s;
+}
+
+@keyframes scale {
+
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.05);
+    }
+
+    20% {
+        transform: scaleY(1);
+    }
+}
+
+/* loader ends*/
+
+
+.search-div {
+    min-width: 45%;
+    max-width: 400px;
+    text-align: right;
+    display: table;
+}
+
+.search-bar {
+    width: 80%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 13px 0 0 13px;
+    font-family: 'Roboto';
+}
+
+.search-button:focus {
+    outline: none;
+}
+
+.search-button {
+    border-radius: 0 13px 13px 0;
+    border: none;
+    padding: 5px;
+    float: right;
+    outline: none;
+}
+
+.account-button:hover {
+    transition: 0.48s;
+    font-size: 1.08em;
+    padding: 5px 0;
+}
+
+.cart-button:hover {
+    transition: 0.48s;
+    font-size: 1.08em;
+    padding: 5px 0;
+}
+
+.account-button:focus {
+    background: rgba(124, 125, 125, 0.6);
+    outline: none;
+}
+
+.cart-button:focus {
+    background: rgba(24, 140, 6, 0.5);
+    outline: none;
+}
+
+.account-button {
+    padding: 10px 0;
+    font-family: "Roboto";
+    font-size: 1em;
+    background-color: rgba(136, 141, 148, 0.25);
+    color: #000;
+    font-weight: 500;
+    border: 0;
+    border-radius: 7px;
+    margin: 5px;
+}
+
+.cart-button {
+    background-color: rgba(124, 222, 126, 0.4);
+    color: #000;
+    padding: 10px 0;
+    font-family: "Roboto";
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 7px;
+    border-left: 5px;
+    border: 0;
+    margin: 5px;
+}
+
+.cart-button-large-devices {
+    width: 5em;
+    padding: 0.7em;
+    background-color: transparent;
+    font-family: 'Roboto';
+    color: #fff;
+    font-size: 0.9em;
+    border-width: 0;
+}
+
+.cart-items {
+    font-size: 17px;
+    font-family: 'Roboto';
+    padding-right: 2px;
+    font-weight: normal;
+}
+
+.web_logo {
+    width: 42px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.logo_text {
+    font-size: 18px;
+    font-family: "Righteous";
+    font-weight: 500;
+    color: #b3e8bc;
+    padding-top: 13px;
+    width: 6.5em;
+}
+
+.nav_items {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #d8e3d9 !important;
+}
+
+.nav_items:hover {
+    color: white !important;
+}
+
+.category-inline-heading {
+    font-family: "Roboto";
+    font-size: 1em;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.category-inline-font {
+    font-family: "Roboto";
+}
+
+
+.hurry-up {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.8em;
+    background-color: rgba(50, 168, 82, 0.07);
+    padding: 2px 0;
+}
+
+.popular-plants-card {
+    width: 18em;
+    height: 17em;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 1em 0;
+    cursor: pointer;
+    margin-top: 1.5em;
+    border: 0.01em solid lightgray;
+}
+
+.popular-plants-card:hover {
+    box-shadow: 0 0 10px 5px lightgray;
+}
+
+.popular-plants-image {
+    width: 9.5em;
+    height: 75%;
+}
+
+.popular-plant-text {
+    font-family: "Roboto";
+    font-size: 1em;
+    height: 10%;
+}
+
+
+.gallery-heading {
+    font-family: "Righteous";
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1.1em;
+    padding-bottom: 0.7em;
+    text-decoration: underline;
+}
+
+.gallery-images {
+    border-radius: 13px;
+    transition: transform 0.8s;
+    object-fit: cover;
+}
+
+.galleryImg div div {
+    overflow: hidden;
+    border-radius: 13px;
+}
+
+.gallery-images:hover {
+    transform: scale(1.2);
+}
+
+.scroll-images {
+    width: 6.85em;
+    height: 8.1em;
+    border-radius: 8px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.scroll-bar {
+    overflow-x: scroll;
+    padding-bottom: 7px;
+}
+
+.scroll-items {
+    margin: 2px;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    width: 0;
+}
+
+.deal-price-details {
+    color: Green;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.price-details {
+    color: gray;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin-left: 9px;
+    text-decoration: line-through solid 1.2px;
+}
+
+.cart-now-button {
+    width: 6.3em;
+    text-align: center;
+    padding: 6px 0;
+}
+
+.about-us-bg {
+    background-color: #e1fade;
+    padding-bottom: 7px;
+    margin-top: 0.9em;
+    border-radius: 10px;
+}
+
+.about-us-paragraph {
+    font-family: "Raleway";
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.testimonials-bg {
+    background-color: rgba(132, 135, 133, 0.1);
+    padding: 0 10px 10px 10px;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
+.testimonials-image {
+    width: 100px;
+    height: 95px;
+    border-radius: 50px;
+    margin-top: 8px;
+}
+
+.testimonials-button {
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.testimonials-button:hover {
+    background-color: lightgray;
+    transition: 0.3s;
+}
+
+.contact-us-heading {
+    font-family: "Raleway";
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.contact-us-paragraph {
+    font-family: "Roboto";
+    font-size: 1em;
+}
+
+.footer-section {
+    background-color: #6f9c6b;
+    background-size: cover;
+    padding: 10px;
+}
+
+.footer-heading {
+    font-family: "Righteous";
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.footer-logos {
+    border-radius: 50%;
+    border-width: 0px;
+    background-color: #a3c99f;
+    width: 3.7em;
+    height: 3.7em;
+    padding-top: 0.9em;
+    margin-right: 8px;
+    color: #2b2b2b;
+}
+
+.footer-logos:hover {
+    color: #147016;
+    transition: 0.3s;
+}
+
+.popular-plant-card-heading {
+    font-size: 1.5em;
+    font-family: 'Roboto';
+    margin: 0.4em;
+}
+
+.popular-plant-deal-price {
+    font-size: 1.4em;
+}
+
+.popular-plant-price {
+    font-size: 0.8em;
+    margin: 0.4em;
+}
+
+.popular-plant-card-paragraph {
+    font-size: 1em;
+    font-family: 'Roboto';
+    text-align: left;
+    padding-top: 0.5em;
+    padding: 1.2em;
+}
+
+
+.add-to-cart-page {
+    background-color: #f2fcf5;
+    background-size: cover;
+    width: 100vw;
+    padding: 1em;
+    font-family: "Roboto";
+}
+
+/* Add To Cart item Styles */
+
+.cart-list-style {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.8em 1.2em 0.2em 1.2em;
+    margin-top: 10px;
+}
+
+.add-cart-image-size {
+    width: 15%;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.add-cart-msg {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+    line-height: 8px;
+}
+
+.increment-cart-button-div {
+    width: 16%;
+}
+
+.cart-count-style {
+    padding-top: 12px;
+    font-size: 13px;
+}
+
+.increment-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 3px;
+}
+
+.hr-line {
+    width: 1px;
+    height: 10px;
+    background-color: black;
+}
+
+.delete-cart-item {
+    width: 10%;
+    font-family: "Roboto";
+    padding: 7px 0 0 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
+.plant-size-name {
+    font-size: 13px;
+    color: gray;
+    font-family: "Roboto";
+    line-height: 8px;
+}
+
+.cart-offer-details {
+    font-size: 13px;
+    color: green;
+    padding-top: 13px;
+    margin: 5px 0 0 20px;
+    line-height: 8px;
+    font-weight: 500;
+    font-family: 'Roboto';
+}
+
+.cart-scroll-bar {
+    overflow-y: scroll;
+    height: 90vh;
+    padding-bottom: 10px;
+}
+
+.cart-scroll-bar::-webkit-scrollbar {
+    width: 0;
+}
+
+.cart-empty {
+    width: 100%;
+    margin: 8em 0 0 0;
+}
+
+
+/* cart price details styles */
+.cart-price-container {
+    max-height: 22em;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.price-details-heading {
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: bold;
+    color: gray;
+}
+
+.cart-price-style {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.total-price-style {
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.cart-save-details {
+    color: green;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/* cart place order styles */
+.place-order-container {
+    background-color: white;
+    background-size: cover;
+    padding: 8px 12px;
+    box-shadow: 0 0 2px 1px lightgray;
+    margin-bottom: 12px;
+}
+
+.happy-shopping {
+    font-family: "Roboto";
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    color: green;
+    padding-top: 8px;
+}
+
+.happy-smile {
+    color: #b3a120;
+}
+
+.place-order {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #eb9234;
+    border: none;
+    outline: none;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    width: 120px;
+    border-radius: 4px;
+}
+
+.place-order:hover {
+    background-color: #c27a2d;
+}
+
+
+
+/* acount section */
+.form-heading {
+    font-family: "Righteous";
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.error-message {
+    color: #dc3545;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-container {
+    min-height: 75vh;
+}
+
+.user-image-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-image {
+    width: 70px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.delete-image {
+    color: #de4a33;
+    font-weight: 400;
+    font-family: "Righteous";
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.upload-image {
+    font-weight: 400;
+    font-family: "Righteous";
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.delete-account {
+    text-align: right;
+    margin: 20px 20px 0 0;
+}
