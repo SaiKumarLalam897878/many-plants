@@ -295,6 +295,7 @@ body {
 
 .scroll-items {
     margin: 2px;
+    text-align:center;
 }
 
 .scroll-bar::-webkit-scrollbar {
@@ -318,7 +319,6 @@ body {
 }
 
 .cart-now-button {
-    width: 6.3em;
     text-align: center;
     padding: 6px 0;
 }
