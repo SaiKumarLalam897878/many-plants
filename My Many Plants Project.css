@@ -655,3 +655,9 @@ body {
     text-align: right;
     margin: 20px 20px 0 0;
 }
+
+@media screen and (max-width: 900px) and (min-width: 576px){
+    *{
+        font-size: 1em !important;
+    }
+}
