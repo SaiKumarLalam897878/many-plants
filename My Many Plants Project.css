@@ -237,10 +237,11 @@ body {
     cursor: pointer;
     margin-top: 1.5em;
     border: 0.01em solid lightgray;
+    transition: all 0.3s ease-in-out;
 }
 
 .popular-plants-card:hover {
-    box-shadow: 0 0 10px 5px lightgray;
+    box-shadow: 0 3px 30px lightgray;
 }
 
 .popular-plants-image {
@@ -370,7 +371,14 @@ body {
 
 .contact-us-paragraph {
     font-family: "Roboto";
-    font-size: 1em;
+    font-size: 0.8em;
+}
+
+.contact-us-paragraph a{
+    font-size: inherit;
+    font-weight: 600;
+    color: #1d1c1c !important;
+    text-decoration: underline;
 }
 
 .footer-section {
