@@ -196,6 +196,16 @@ body {
     width: 6.5em;
 }
 
+.navbar {
+    padding: 0px 5px;
+}
+
+@media only screen and (min-width: 37.6em) {
+    .navbar {
+        padding: 8px 25px;
+    }
+}
+
 .nav_items {
     font-family: "Roboto";
     font-weight: 400;
